@@ -152,14 +152,11 @@ systemctl --user start docker-desktop
 # Remove Firefox Snap
 systemctl stop var-snap-firefox-common-host\\x2dhunspell.mount
 systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount 
-snap remove firefox -y
-cd ~/snap
-rm -r firefox
-sudo gedit /etc/apt/preferences.d/firefox-no-snap
-apt purge firefox
-add-apt-repository ppa:mozillateam/ppa
+snap remove firefox
+apt purge firefox -y
+add-apt-repository ppa:mozillateam/ppa -y
 apt-get update
-apt install firefox
+apt install firefox -y
 
 
 #add-apt-repository ppa:apt-fast/stable -y
